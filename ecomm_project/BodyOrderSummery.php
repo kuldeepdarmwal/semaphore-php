@@ -15,7 +15,7 @@ $record=$obj->read_record($field, $table, $condition);
 $arra=[];
 $price=0;
 $arra=array(explode("&",str_replace('%2F','/',(str_replace('%2C',',',urldecode(html_entity_decode($_SESSION['key'])))))));
-include_once "ForLoopDisplay.php"
+include_once "ForLoopDisplay.php";
 echo '<tr>';
 include "DisplayTable.php";
 echo "</tr>";
