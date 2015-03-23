@@ -30,18 +30,18 @@ echo "</tr>";
 <tr>
 <td>&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;<?php echo $_SESSION['email'];?>&nbsp;&nbsp;&nbsp;</td>
-</tr> 
+</tr>
 <?php
 foreach ($record as $key ) {
     $_SESSION["user_details_id"]= $key['user_id'];
-    foreach ($key as $subElement=>$val) {	
+  foreach ($key as $subElement=>$val) {
 	?>
 		<tr>
 		<td>&nbsp;&nbsp;&nbsp;<?php echo "$subElement";?>&nbsp;&nbsp;&nbsp;</td>
         <td>&nbsp;&nbsp;&nbsp;<?php echo "$val";?>&nbsp;&nbsp;&nbsp;</td>
-		</tr> 
+		</tr>
 		<?php
-    } 
+    }
 }
 ?>
 </table>

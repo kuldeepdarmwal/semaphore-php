@@ -8,7 +8,7 @@
 	$var=$_SERVER['QUERY_STRING'];
 	$_SESSION['key']=$var;
 	$price=0;
-	$arra=[];	
+	$arra=[];
 	$arra=array(explode("&",str_replace('%2F','/',(str_replace('%2C',',',urldecode(html_entity_decode($_SERVER['QUERY_STRING'])))))));
 	include_once "ForLoopDisplay.php";
 	echo '<tr>';
