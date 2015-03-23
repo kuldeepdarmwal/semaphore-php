@@ -1,13 +1,15 @@
 <pre>
 <div id="body" >
 	<fieldset>
-	<legend> <font face="BedRock" color="MediumVioletRed" size="6">Detail Order Summary </legend>
+	<legend>Order summery page</legend>
 	<table border="2" class="table table-striped table-bordered" align="center">
-	<thead><tr><th width="13%"><font face="BedRock" color="DarkSlateGray">Product Name</th>
-		<th width="10%"><font face="BedRock" color="DarkSlateGray">Price</th>
-		<th width="15%"><font face="BedRock" color="DarkSlateGray">Image Name</th>
-		<th width="35%" height="35%"><font face="BedRock" color="DarkSlateGray">Product</th>
-		<th width="27%"><font face="BedRock" color="DarkSlateGray">Description </th>
+	<thead>
+		<tr>	
+		<th>Product_Name</th>
+		<th>Price</th>
+		<th>Image name</th>
+		<th>Your Products</th>
+		<th>Description </th>
 		</tr>
 	</thead>
 <?php
@@ -26,59 +28,35 @@ $arra=array(explode("&",str_replace('%2F','/',(str_replace('%2C',',',urldecode(h
 		if ($key == 0){
 			$array1[$key]= substr($value,18,-18);
 		} else {
-			$array1[$key] = substr($value,14,-14);
+			$array1[$key] = substr($value,14,-14); 
 		}
 	}
 echo '<tr>';
-foreach ($arra[0] as $booking) {
-$temp=$booking;
-$temp=explode(",", $temp);
-    foreach ($temp as $key=>$booking2) {
-		if ($key == 0) {
-		#checking
-		}
-		if ($key == 1 or $key==2 or $key==3) {
-			echo "<td>".$booking2."</td>";
-		}
-		 if ($key == 4) {
-			echo "<td>";
-			echo '<img src="'.$booking2.'" alt="images" >';
-			echo "</td>";
-		}
-		if ($key==5) {
-			echo "<td>".$booking2."</td>";
-			echo '<tr>';
-			echo '</tr>';
-		}
-		if ($key==2) {
-				$price+=$booking2;
-			}
-	}
-}
+include "DisplayTable.php";
 echo "</tr>";
 ?>
 <tr>
-		<td colspan="4"><h4 style="color:DarkRed;text-align:center">Total Price</h4></td>
-		<td><h4 style="color:DarkRed;text-align:center"><?php  echo $price;?></h4></td>
+		<td colspan="4"><h4 style="color:blue;text-align:center">Total Price</h4></td>
+		<td><h4 style="color:blue;text-align:center"><?php  echo $price;?></h4></td>
 		</tr>
 </table>
-<h3>Address Details :</h3>
-<table border="3" BORDERCOLOR="#B8860B">
+<h3>Address details :</h3>
+<table border="3">
 <tr>
 <td>&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;<?php echo $_SESSION['email'];?>&nbsp;&nbsp;&nbsp;</td>
-</tr>
+</tr> 
 <?php
 foreach ($record as $key ) {
     $_SESSION["user_details_id"]= $key['user_id'];
-    foreach ($key as $subElement=>$val) {
+    foreach ($key as $subElement=>$val) {	
 	?>
 		<tr>
 		<td>&nbsp;&nbsp;&nbsp;<?php echo "$subElement";?>&nbsp;&nbsp;&nbsp;</td>
         <td>&nbsp;&nbsp;&nbsp;<?php echo "$val";?>&nbsp;&nbsp;&nbsp;</td>
-		</tr>
+		</tr> 
 		<?php
-    }
+    } 
 }
 ?>
 </table>
