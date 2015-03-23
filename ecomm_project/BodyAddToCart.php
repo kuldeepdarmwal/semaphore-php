@@ -2,17 +2,9 @@
 <link rel="stylesheet" type="text/css" href="css/bodyCss.css">
 <div id="body">
 <h1 style="color:red;text-align:center">Your Cart</h1>
-<table class="table table-striped table-bordered" border="2">
-	<thead>
-		<tr>
-			<th>Product_Name</th>
-			<th>Price</th>
-			<th>Image name</th>
-			<th>Image_path</th>
-			<th>Description </th>
-		</tr>
-	</thead>
 <?php
+
+	include_once "TableDisplay.php";
 	$var=$_SERVER['QUERY_STRING'];
 	$_SESSION['key']=$var;
 	$price=0;
@@ -27,7 +19,7 @@
 		}
 	}
 	echo '<tr>';
-	include "DisplayTable.php";
+	include_once "DisplayTable.php";
 echo "</tr>";
 ?>
 		<tr>

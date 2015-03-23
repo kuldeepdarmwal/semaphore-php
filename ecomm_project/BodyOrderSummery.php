@@ -2,17 +2,9 @@
 <div id="body" >
 	<fieldset>
 	<legend>Order summery page</legend>
-	<table border="2" class="table table-striped table-bordered" align="center">
-	<thead>
-		<tr>	
-		<th>Product_Name</th>
-		<th>Price</th>
-		<th>Image name</th>
-		<th>Your Products</th>
-		<th>Description </th>
-		</tr>
-	</thead>
+
 <?php
+include_once "TableDisplay.php";
 include_once "Helper.php";
 $var=$_SESSION['user'];
 $obj = new Helper("ecomm");
