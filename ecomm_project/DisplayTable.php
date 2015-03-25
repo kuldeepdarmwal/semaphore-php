@@ -3,8 +3,6 @@
 		$temp=$booking;
 		$temp=explode(",", $temp);
 		foreach ($temp as $key=>$booking2) {
-		if ($key == 0) {
-		}
 		if ($key == 1 or $key==2 or $key==3) {
 			echo "<td>".$booking2."</td>";
 		}

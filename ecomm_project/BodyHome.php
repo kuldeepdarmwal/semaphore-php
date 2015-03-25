@@ -55,7 +55,29 @@ echo ' <tbody>';
 	}
 	echo '</tbody>';
 	echo ' </table> ';
-	echo '<center><button type="button" id="submitCart" class="btn btn-info" name="cartarr">Add To Cart</button></center>';
+	echo '<center><button type="button" id="submitCart" class="btn btn-info" name="cartarr" data-toggle="modal" data-target="#myCart">Add To Cart</button></center>';
 	echo '</form>';	
 }
 ?>
+<div class="modal fade" id="myCart" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="width:70%">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" 
+               aria-hidden="true">[Close]×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               Your Cart
+            </h4>
+         </div>
+         <div class="modal-body" id="cartdisp">
+         </div>
+         <div class="modal-footer">
+            <form action="Summary.php" method="POST">
+<input type="submit" class="btn btn-info" value="Confirm Order"/>&nbsp;<input type="button" value="Cancel"
+class="btn btn-info" id="cancel_addtoCart"/></form>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div>

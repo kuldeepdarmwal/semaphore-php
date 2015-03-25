@@ -12,8 +12,10 @@ $field="user_id,mobile,address,city,zip";
 $table="user_details";
 $condition="user_id='".$var."'";
 $record=$obj->read_record($field, $table, $condition);
+
 $arra=[];
-$price=0;
+$price=$_SESSION['price'];
+session_start();
 $arra=array(explode("&",str_replace('%2F','/',(str_replace('%2C',',',urldecode(html_entity_decode($_SESSION['key'])))))));
 include_once "ForLoopDisplay.php";
 echo '<tr>';
@@ -22,7 +24,7 @@ echo "</tr>";
 ?>
 <tr>
 		<td colspan="4"><h4 style="color:blue;text-align:center">Total Price</h4></td>
-		<td><h4 style="color:blue;text-align:center"><?php  echo $price;?></h4></td>
+		<td><h4 style="color:blue;text-align:center"><?php echo $price ?></h4></td>
 		</tr>
 </table>
 <h3>Address details :</h3>
