@@ -5,7 +5,6 @@
    <include mask="*.php"/>
    <exclude mask="*autoload.php"/>
   </collector>
-
   <generator output=".">
    <enrich base="logs">
     <source type="build"/>

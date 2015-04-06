@@ -6,4 +6,5 @@
 		} else {
 			$array1[$key] = substr($value,14,-14);
 		}
+		
 	}

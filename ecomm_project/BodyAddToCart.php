@@ -1,9 +1,6 @@
 <pre>
-<link rel="stylesheet" type="text/css" href="css/bodyCss.css">
-<div id="body">
-<h1 style="color:red;text-align:center">Your Cart</h1>
 <?php
-
+	session_start();
 	include_once "TableDisplay.php";
 	$var=$_SERVER['QUERY_STRING'];
 	$_SESSION['key']=$var;
@@ -17,12 +14,9 @@ echo "</tr>";
 ?>
 		<tr>
 		<td colspan="4"><h4 style="color:blue;text-align:center">Total Price</h4></td>
+		<?php $_SESSION['price']=$_SESSION['price']+$price?>
 		<td><h4 style="color:blue;text-align:center"><?php  echo $price;?></h4></td>
 		</tr>
 </table>
-<form action="Summary.php" method="POST">
-<input type="submit" class="btn btn-info" value="Confirm Order"/>&nbsp;<input type="button" value="Cancel"
-class="btn btn-info" id="cancel_addtoCart"/>
-</form>
 </div>
 </pre>

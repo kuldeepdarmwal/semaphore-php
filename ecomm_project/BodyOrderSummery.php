@@ -4,6 +4,7 @@
 	<legend>Order summery page</legend>
 
 <?php
+session_start();
 include_once "TableDisplay.php";
 include_once "Helper.php";
 $var=$_SESSION['user'];
@@ -12,8 +13,10 @@ $field="user_id,mobile,address,city,zip";
 $table="user_details";
 $condition="user_id='".$var."'";
 $record=$obj->read_record($field, $table, $condition);
+
 $arra=[];
-$price=0;
+$price=$_SESSION['price'];
+session_start();
 $arra=array(explode("&",str_replace('%2F','/',(str_replace('%2C',',',urldecode(html_entity_decode($_SESSION['key'])))))));
 include_once "ForLoopDisplay.php";
 echo '<tr>';
@@ -22,7 +25,7 @@ echo "</tr>";
 ?>
 <tr>
 		<td colspan="4"><h4 style="color:blue;text-align:center">Total Price</h4></td>
-		<td><h4 style="color:blue;text-align:center"><?php  echo $price;?></h4></td>
+		<td><h4 style="color:blue;text-align:center"><?php echo $price ?></h4></td>
 		</tr>
 </table>
 <h3>Address details :</h3>
@@ -45,9 +48,27 @@ foreach ($record as $key ) {
 }
 ?>
 </table>
-<form method="POST" action="Validate.php">
-<input type="submit" name="btn_submit" class="btn btn-info" value="Address" />&nbsp;<input type="submit" name="btn_submit"  class="btn btn-info" value="Confirm" />&nbsp;<input type="submit" name="btn_submit" class="btn btn-info"  value="Cancel" />
-</form>
+<script type="text/javascript" src="js/updateAddress.js"></script>
+<button type="button" name="btn_submit" class="btn btn-info" value="Address" data-toggle="modal" data-target="#myAddress" >Address</button>
+<button type="button" name="btn_submit"  class="btn btn-info" value="Confirm" >Confirm</button>
+<button type="button" name="btn_submit" class="btn btn-info"  value="Cancel" >Cancel</button>
 	</fieldset>
 </div>
 </pre>
+<div class="modal fade" id="myAddress" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="width:70%">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" 
+               aria-hidden="true">[Close]×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+              Check/Update Details
+            </h4>
+         </div>
+         <div class="modal-body" id="addressdisp">
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div>

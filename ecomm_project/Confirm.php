@@ -44,9 +44,13 @@ $temp=explode(",", $temp);
 $parts = explode("@", "$emailid");
 $username = $parts[0];
 ?>
+<script type="text/javascript" src="js/updateAddress.js"></script>
 <div id="body">
 <h1 style="color:magenta">Thank you....<?php echo $username;?></h1>
 	<?php  echo "<h3 style='color:blue'> You shoped for $price</h1>";
+			$_SESSION['final_username']=$username;
+			$_SESSION['final_price']=$price;
+	echo '<button type="button" name="btn_submit" class="btn btn-info"  value="PDF" >PDF</button>';
 	echo "</div>";
 include_once "html/FooterHtml.html";
 ?>
