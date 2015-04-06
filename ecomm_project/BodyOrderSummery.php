@@ -7,6 +7,7 @@
 session_start();
 include_once "TableDisplay.php";
 include_once "Helper.php";
+include_once "stringconvert.php";
 $var=$_SESSION['user'];
 $obj = new Helper("ecomm");
 $field="user_id,mobile,address,city,zip";
@@ -18,9 +19,15 @@ $arra=[];
 $price=$_SESSION['price'];
 session_start();
 $arra=array(explode("&",str_replace('%2F','/',(str_replace('%2C',',',urldecode(html_entity_decode($_SESSION['key'])))))));
+<<<<<<< HEAD
 include_once "ForLoopDisplay.php";
 echo '<tr>';
 include "DisplayTable.php";
+=======
+ // Its conversion of querystring data into Array Format
+
+stringConvert1($arra,$price);
+>>>>>>> 40952a36d8476baf5dcd0ff0f0fe27e738542016
 echo "</tr>";
 ?>
 <tr>
