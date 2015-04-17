@@ -7,7 +7,7 @@ DESTINATION=$2
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"
-sudo unzip -d -A /opt/rh/httpd24/root/var/www/html/ecommerce-cd /var/lib/jenkins/jobs/Ecomm_project_CI/workspace/ecomm_project.zip #given here static path can be changed later
+sudo unzip -do /opt/rh/httpd24/root/var/www/html/ecommerce-cd /var/lib/jenkins/jobs/Ecomm_project_CI/workspace/ecomm_project.zip #given here static path can be changed later
 echo "Wait!! Let me go to web server directory"
 cd /opt/rh/httpd24/root/var/www/html/
 sleep 5
