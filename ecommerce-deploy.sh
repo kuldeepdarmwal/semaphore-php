@@ -7,7 +7,7 @@ DESTINATION=$2
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"
-sudo unzip -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd /var/lib/jenkins/jobs/Ecomm_project_CI/workspace/ecomm_project.zip #given here static path can be changed later
+sudo unzip -d -A /opt/rh/httpd24/root/var/www/html/ecommerce-cd /var/lib/jenkins/jobs/Ecomm_project_CI/workspace/ecomm_project.zip #given here static path can be changed later
 echo "Wait!! Let me go to web server directory"
 cd /opt/rh/httpd24/root/var/www/html/
 sleep 5
@@ -16,7 +16,7 @@ sudo chmod -R 777 ecommerce-cd
 echo "###################################################"
 echo " Adding Host Entry in hosts file"
 echo "##################################################"
-sudo echo  "127.0.0.1 ecommerce-cd">>/etc/hosts
+echo  "127.0.0.1 ecommerce-cd">> sudo /etc/hosts
 echo "##################################################"
 echo "Restart Apache"
 echo "######################################################"
