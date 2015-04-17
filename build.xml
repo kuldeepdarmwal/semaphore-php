@@ -127,7 +127,7 @@
 
 
 <target name="zip" description="zip files using ant">
-    <zip destfile="ecomm_project.ZIP" basedir="ecomm_project/"/>
+    <zip destfile="ecommerce-cd.zip" basedir="ecomm_project/"/>
 </target>       
 
 
