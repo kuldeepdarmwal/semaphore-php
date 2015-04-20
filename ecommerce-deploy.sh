@@ -7,12 +7,16 @@ DESTINATION=$2
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"
-sudo unzip -do /opt/rh/httpd24/root/var/www/html/ecommerce-cd /var/lib/jenkins/jobs/Ecomm_project_CI/workspace/ecomm_project.zip #given here static path can be changed later
+sudo cp  /var/lib/jenkins/jobs/Ecomm_project_CI/workspace/ecommerce-cd.zip /opt/rh/httpd24/root/var/www/html
+
+cd /opt/rh/httpd24/root/var/www/html
+ unzip -do ecommerce-cd ecommerce-cd.zip
 echo "Wait!! Let me go to web server directory"
 cd /opt/rh/httpd24/root/var/www/html/
 sleep 5
 echo "Giving executable permission to artifact"
 sudo chmod -R 777 ecommerce-cd
+rm -rf ecommerce-cd.zip
 echo "###################################################"
 echo " Adding Host Entry in hosts file"
 echo "##################################################"
