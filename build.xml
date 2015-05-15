@@ -136,7 +136,7 @@
     <exclude name="**/*.min.js" />
   </fileset>
   <exec executable="java" output="build/logs/jslint.xml">
-    <arg line="-jar ${basedir}/build/tools/jslint.jar --report xml " />
+    <arg line="-jar ${basedir}/build/tools/jslint.jar" />
   </exec>
 </target>
 
