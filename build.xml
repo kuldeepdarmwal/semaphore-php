@@ -135,7 +135,7 @@
     <include name="**/*.js" />
     <exclude name="**/*.min.js" />
   </fileset>
-  <exec executable="jslint" output="build/logs/jslint.xml">
+  <exec executable="jslint.jar" output="build/logs/jslint.xml">
     <arg line="--report xml " />
   </exec>
 </target>
