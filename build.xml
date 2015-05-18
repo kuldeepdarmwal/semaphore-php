@@ -131,7 +131,7 @@
 </target>
   
 <target name="jslint" description="Run the JSLint tool on JS files">
-  <fileset dir="${basedir}/js" >
+  <fileset dir="${basedir}/ecomm_project" >
     <include name="**/*.js" />
     <exclude name="**/*.min.js" />
   </fileset>
