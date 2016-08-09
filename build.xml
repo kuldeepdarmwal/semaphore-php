@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Ecomm" default="build" basedir=".">
- <target name="build" depends="prepare,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpdox,jslint,csslint,zip"/>
+ <target name="build" depends="prepare,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpdox,csslint,zip"/>
 
 <target name="clean" description="Cleanup build artifacts">
   <delete dir="${basedir}/build/api"/>
@@ -130,7 +130,7 @@
     <zip destfile="ecommerce-cd.zip" basedir="ecomm_project/"/>
 </target>
   
-<target name="jslint" description="Run the JSLint tool on JS files">
+<!--<target name="jslint" description="Run the JSLint tool on JS files">
   <fileset dir="${basedir}/ecomm_project" >
     <include name="**/*.js" />
     <exclude name="**/*.min.js" />
@@ -138,7 +138,7 @@
     <exec executable="jshint" output="build/logs/jslint.xml">
     <arg line="--reporter=jslint ." />
   </exec>
-</target>
+</target>-->
 
 
 <target name="csslint" description="Run the CSSLint tool on CSS files">
