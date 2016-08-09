@@ -130,15 +130,7 @@
     <zip destfile="ecommerce-cd.zip" basedir="ecomm_project/"/>
 </target>
   
-<!--<target name="jslint" description="Run the JSLint tool on JS files">
-  <fileset dir="${basedir}/ecomm_project" >
-    <include name="**/*.js" />
-    <exclude name="**/*.min.js" />
-  </fileset>
-    <exec executable="jshint" output="build/logs/jslint.xml">
-    <arg line="--reporter=jslint ." />
-  </exec>
-</target>-->
+
 
 
 <target name="csslint" description="Run the CSSLint tool on CSS files">
